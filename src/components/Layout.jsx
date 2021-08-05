@@ -1,9 +1,25 @@
+import { Layout as LayoutTwo } from 'antd';
+import 'antd/dist/antd.css';
+import './Layout.css';
+import MenuNavigation from './MenuNavigation';
+
+const { Header, Footer, Sider, Content } = LayoutTwo;
+
 function Layout({ children }) {
     return (
-        <div>
-            <h1>Layout</h1>
-            {children}
-        </div>
+        <LayoutTwo>
+                <MenuNavigation />
+            <Sider>
+                Sider
+            </Sider>
+            <LayoutTwo>
+                <Header>Header</Header>
+                <Content>
+                    {children}
+                </Content>
+                <Footer>Footer</Footer>
+            </LayoutTwo>
+        </LayoutTwo>
     )
 }
 
