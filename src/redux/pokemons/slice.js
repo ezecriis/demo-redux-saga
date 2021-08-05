@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
   items: [],
-  loaded: false,
+  loaded: true,
 };
 
 const packagesBySearchCode = createSlice({
@@ -13,9 +13,10 @@ const packagesBySearchCode = createSlice({
       state.loaded = false;
     },
     fetchPokemonsSuccess: (state, action) => {
-      state.items = action.payload.items;
-      state.pageable.totalElements = action.payload.total;
+      const { items, total } = action.payload;
       state.loaded = true;
+      state.items = items;
+      state.total = total;
     },
     fetchPokemonsFailure: (state) => {
       state.loaded = true;

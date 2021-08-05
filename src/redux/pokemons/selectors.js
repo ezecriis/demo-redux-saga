@@ -4,4 +4,4 @@ export const pokemonsItemsSelector = (state) => state[name].items;
 
 export const pokemonsSelector = (state) => state[name] || initialState;
 
-export const packagesLoadedSelector = (state) => state[name].loaded;
+export const pokemonsLoadedSelector = (state) => state[name].loaded;
